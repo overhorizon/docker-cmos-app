@@ -5,3 +5,5 @@ docker exec -i Name_Image /bin/bash -c "PGPASSWORD=PASSWORD_PGSQL psql --usernam
 Permission issue. Alpine image.
 
 RUN apk add shadow && usermod -u 1000 www-data && groupmod -g 1000 www-data
+
+docker images | grep none | awk '{ print $3; }' | xargs docker rmi
